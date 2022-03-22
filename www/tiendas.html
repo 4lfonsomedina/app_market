@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<!-- CABECERA -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="connect-src *;">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="img/logo.png">
+    <title>Ferbis Movil</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<!-- INICIO BODY -->
+<body>
+	<div class="splash"></div>
+    <div class="row menu_bar2">
+    	<a href="#" class="cerrar_ventana regresar_link_e">
+      <div class="col-xs-4">
+        <i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i>
+      </div>
+  </a>
+      <div class="col-xs-8 titulo_emergente" style="text-align: right;">
+      	Tiendas
+      </div>
+    </div>
+    <div class="contenido_emergente">
+
+<div class="tiendas_contenedor">
+
+
+
+
+	<ul class="nav nav-tabs">
+	  <li class="active li_paso"><a data-toggle="tab" href="#brasil" class="recargar_mapa">Brasil</a></li>
+	  <li class="li_paso"><a data-toggle="tab" href="#sanmarcos" class="recargar_mapa">SanMarcos</a></li>
+	  <li class="li_paso"><a data-toggle="tab" href="#gastroshop" class="recargar_mapa">GastroShop</a></li>
+	</ul>
+
+	<div class="tab-content">
+	  <div id="brasil" class="tab-pane fade in active">
+	    <div class="col-xs-12">
+			<div id="map_brasil" class="tiendas_mapa"></div><br />
+		</div>
+		<div class="col-xs-12">
+			<p>
+			Ave. Brasil #750. Col. Cuahutémoc Norte
+			Mexicali, B.C., C.P. 21200, México
+			</p>
+			<div class="col-xs-6 num_tienda"><a href="tel:6865653623"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> (686)5653623</a></div>
+			<div class="col-xs-6 num_tienda"><a href="tel:6865643061"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> (686)5643061</a></div>
+			<div class="col-xs-6 num_tienda"><a href="tel:6865649201"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> (686)5649201</a></div>
+			<div class="col-xs-6 num_tienda"><a href="tel:6865633212"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> (686)5633212</a></div>
+			</p>
+		</div>
+	  </div>
+	  <div id="sanmarcos" class="tab-pane fade">
+	    <div class="col-xs-12">
+			<div id="map_san_marcos" class="tiendas_mapa"></div><br />
+		</div>
+		<div class="col-xs-12">
+			<p>
+			Calle Ocotlán s/n entre Colina
+			y Paseo San Marcos Fracc. San Marcos
+			Mexicali, B.C., C.P. 21050, México
+			</p>
+			<div class="col-xs-6 num_tienda"><a href="tel:6865551847"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> (686)5551847</a></div>
+			<div class="col-xs-6 num_tienda"><a href="tel:6865552345"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> (686)5552345</a></div>
+			<div class="col-xs-6 num_tienda"><a href="tel:6865589070"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> (686)5589070</a></div>
+		</div>
+	  </div>
+	  <div id="gastroshop" class="tab-pane fade">
+	    <div class="col-xs-12">
+			<div id="map_gastro" class="tiendas_mapa"></div><br />
+		</div>
+		<div class="col-xs-12">
+			<p>
+			Calz. Manuel Gómez Morín #799-6, Plaza Lienzo
+			Mexicali, B.C., C.P. 21259, México
+			</p>
+			<div class="col-xs-6 num_tienda"><a href="tel:6865645718"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> (686)5645718</a></div>
+			<div class="col-xs-6 num_tienda"><a href="tel:6865655718"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> (686)5655718</a></div>
+		</div>
+	  </div>
+	</div>
+
+</div>
+
+<div class="alerta_multiusos" hidden></div>
+
+
+<!-- Alerta Multiusos Mensaje -->
+<div id="Modal_alerta" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+            <div class="modal-body" style="text-align: center; font-size: 18px; padding:20px 30px 20px 20px;" id="Modal_alerta_mensaje">
+                Este es un mensaje de alerta para reemplazar las alertas!!!
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-success" data-dismiss="modal"> Continuar </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+    
+</body><!--FIN BODY-->
+
+<!--PIE -->
+<footer>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/rutas.js"></script>
+    <script type="text/javascript" src="js/funciones.js"></script>   
+    <script type="text/javascript" src="js/session.js"></script>
+    <script type="text/javascript" src="js/tiendas.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNd6OjtDMttSHWKocaLW24wkAg6bp0peA&callback=cargar_mapas"></script>
+</footer>
+</html>

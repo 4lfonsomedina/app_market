@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<!-- CABECERA -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="connect-src *;">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="img/logo.png">
+    <title>Ferbis Movil</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    
+</head>
+
+<!-- INICIO BODY -->
+<body>
+	<div class="splash"></div>
+    <div class="row menu_bar2">
+    	<a href="#" class="cerrar_ventana regresar_link_e">
+      <div class="col-xs-4">
+        <i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i>
+      </div>
+  		</a>
+      <div class="col-xs-8 titulo_emergente" style="text-align: right;">
+      	Pedido
+      </div>
+    </div>
+    <div class="contenido_emergente" style="height: 80vh !important; ">
+
+
+
+<div class="contenedor_pedido">
+
+	<ul class="nav nav-tabs">
+	  <li class="active li_paso li_paso1" paso='1'><a data-toggle="tab" href="#pedido_1"><span class="paso_class">1</span></a></li>
+	  <li class="li_paso li_paso2" paso='2'><a data-toggle="tab" href="#pedido_2"><span class="paso_class">2</span></a></li>
+	  <li class="li_paso li_paso3" paso='3'><a data-toggle="tab" href="#pedido_3"><span class="paso_class">3</span></a></li>
+	</ul>
+
+<form id="pedido_form">
+
+
+
+	<!-- MODAL CON MAPA DE UBICACION -->
+<div id="modal_direccion" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      	<h4 class="modal-title"><b>Dirección</b></h4></div>
+      <div class="modal-body">
+
+
+      	<input type="hidden" class="pedido_id_carrito" name="id_carrito">
+		<input type="hidden" class="cuenta_id_cliente" name="id_cliente">
+		<input type="hidden" class="pedido_id_sucursal" name="id_sucursal">
+		<input type="hidden" class="pedido_sucursal" name="sucursal">
+		<input type="hidden" class="sucursal_distancia_input" name="distancia">
+		<input type="hidden" class="cuenta_lat" name="lat">
+		<input type="hidden" class="cuenta_lon" name="lon">
+		<input type="hidden" class="pedido_articulos_input" name="articulos">
+		<input type="hidden" class="pedido_total_input" name="total">
+	  	
+	  	
+	  	
+	  	<div class="row">
+			<div class="col-xs-12">
+				<input type="text" class="form-control cuenta_calle" name="dir_calle"><br><span class="mini_form">Calle</span>
+			</div>
+			<div class="col-xs-6">
+				<input type="text" class="form-control cuenta_num" name="dir_numero1"><br><span class="mini_form">Num. externo</span>
+			</div>
+			<div class="col-xs-6">
+				<input type="text" class="form-control cuenta_num2" name="dir_numero2"><br><span class="mini_form">Num. interno</span>
+			</div>
+			<div class="col-xs-12">
+				<input type="text" class="form-control cuenta_colonia" name="dir_colonia"><br><span class="mini_form">Colonia</span>
+			</div>
+			<div class="col-xs-12">
+				<textarea rows="2" class="form-control cuenta_referencia" name="referencia"></textarea><br><span class="mini_form">Referencia</span>
+			</div>
+		</div>
+		
+
+
+
+
+      </div>
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-success btn_guardar_direccion" data-dismiss="modal">
+             Aceptar <i class="fa fa-check" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div> <!--FIN MODAL-->
+
+
+
+	<div class="tab-content">
+	  <div id="pedido_1" class="tab-pane fade in active">
+	  	<div class="contenedor_paso_1">
+	  		<div class="row">
+<!--seleccion de servicio-->
+	  	<div class="col-xs-6 pedido_radio_div"><label>
+	  		<div class="col-xs-12" style="text-align: center">
+	  			<span style="position:absolute;top:-20px;"><i class="fa fa-motorcycle fa-2x" aria-hidden="true"></i></span>
+	  		</div>
+	  		<div class="col-xs-2">
+	  			<input type="radio" class="form-control pedido_radio" name="servicio" checked value="1">
+	  		</div>
+	  		<div class="col-xs-10">
+	  			<b>A domicilio</b>
+	  		</div>
+	  	</label></div>
+	  	<div class="col-xs-6 pedido_radio_div"><label>
+	  		<div class="col-xs-12" style="text-align: center">
+	  			<span style="position:absolute;top:-20px;"><i class="fa fa-hand-o-down fa-2x" aria-hidden="true"></i></span>
+	  		</div>
+	  		<div class="col-xs-2">
+	  			<input type="radio" class="form-control pedido_radio" name="servicio" value="2" id='scheck2'>
+	  		</div>
+	  		<div class="col-xs-10">
+	  			<b>Paso por el</b>
+	  		</div>
+	  	</label></div>
+
+		</div>
+		</div>
+
+		<!-- RECOGER EN -->	
+		<div class="contenedor_paso_1 tabla_cuenta_recoger">
+			<div class="row">
+				<center style='font-size: 16px;'><b>Recoger en:</b></center>
+				<select class="form-control recoger_sucursal">
+					<option value="1">Brasil</option>
+					<option value="2">San Marcos</option>
+				</select>
+			</div>
+		</div>
+
+
+		<!-- DOMICILIO -->
+		<a href="#" class="pedido_row_a panel_direccion">
+		<div class="contenedor_paso_1 tabla_cuenta">
+			<div class="row">
+				<div class="col-xs-12">
+			  		<center style='font-size: 16px;'><b>Dirección:</b></center>
+			  	</div>
+			  	<div class="col-xs-10">
+			  		<span class="resumen_direccion"></span>
+			  	</div>
+			  	<div class="col-xs-2" style="position:relative; top:-10px;">
+		  			<i class="fa fa-pencil" aria-hidden="true"></i>
+		  		</div>
+		  		<div class="col-xs-12" style="font-weight: bold;">
+		  			<span class="sucursal_distancia"></span> <span class="sucursal_cercana"></span>
+		  		</div>
+		  	</div>
+	  	</div>
+	  	</a>
+
+	  	<!-- PROGRAMAR ENTREGA -->
+		<div class="contenedor_paso_1">
+			<div class="row">
+				<div class="col-xs-12" style="text-align: center; font-weight: bold; font-size: 16px;">Programar Entrega</div>
+				<div class="col-xs-7 fecha_entrega"><input type="date" id="fecha_pedido" class="form-control" name="fecha_entrega">
+					<span class="mini_form">Fecha</span><br>
+				</div>
+				<div class="col-xs-5 hora_entrega">
+					<select id="select_horas_disponibles" class="form-control" name="hora_entrega"></select><span class="mini_form">Hora</span><br>
+				</div>
+			</div>
+		</div>
+
+	  </div>
+	  <div id="pedido_2" class="tab-pane fade">
+	  	<div class="contenedor_paso_1" style="margin-top: 0px;">
+
+		<div class="row">
+			<center><b>Contacto</b></center>
+			<div class="col-xs-12">
+				<input type="text" class="form-control cuenta_nombre" name="nombre"><br><span class="mini_form">Nombre</span>
+			</div>
+			<div class="col-xs-12">
+				<input type="number" class="form-control cuenta_telefono" name="telefono"><br><span class="mini_form">Teléfono</span>
+			</div>
+			<div class="col-xs-12">
+				<input type="text" class="form-control cuenta_correo" name="correo"><br><span class="mini_form">Correo</span>
+			</div>
+			<div class="col-xs-12">
+				<input type="text" class="form-control cuenta_numero" name="numero"><br><span class="mini_form">#Cliente Frec.</span>
+			</div>
+		</div>
+
+		</div>
+		<div class="contenedor_paso_1 ">
+	  		<div hidden><b>Articulos:</b> <span class="pedido_articulos">0000</span><br></div>
+	  		<center><b>Total Aprox:</b> <span class="pedido_total">$10000</span> <span class="pedido_envio"></span></center>
+	  		<p class="aprox"><b>Cuando su pedido esté listo, recibirá una llamada para informarle su total exacto</b></p>
+	  		<!--
+	  		<div class="contenedor_tipo_pago">
+		  	<div class="col-xs-6 pedido_radio_div"><label>
+		  		<div class="col-xs-2"><input type="radio" class="form-control" name="pago" checked value="1"></div>
+			  		<div class="col-xs-10">Efectivo</div>
+			  	</label></div>
+
+			  	<div class="col-xs-6 pedido_radio_div"><label>
+			  		<div class="col-xs-2"><input type="radio" class="form-control" name="pago" value="2"></div>
+			  		<div class="col-xs-10">Tarjeta</div>
+			  	</label></div>
+			  		
+			  	<table class="table tabla_pago">
+			  		<tr style="text-align: center">
+			  			<td><b>Con cuanto va a pagar?</b></td>
+			  		</tr>
+			  		<tr style="text-align: center">
+			  			<td><input type="number" name="pago_cuanto" class="form-control pedido_pago_cuanto"></td>
+			  		</tr>
+			  		 
+			  		<tr>
+			  			<td><p class="aprox"><b>Cuando su pedido esté listo, recibirá una llamada para informarle su total exacto</b></p></td>
+			  		</tr>
+			  	</table>
+			 
+			  </div>
+			-->
+		  </div> 
+	  </div>
+	   <div id="pedido_3" class="tab-pane fade" style="padding-top: 0px !important">
+	  	<div class="contenedor_paso_1" style="text-align: center">
+	  		<div class="row">
+		  		<span class="p3_nombre"></span><br>
+		  		<span class="p3_servicio"></span><br>
+		  		<div class="col-xs-6"><span class="pedido_articulos"></span> Articulos<br></div>
+		  		<div class="col-xs-6"><b> Aprox</b> $<span class="pedido_total"></span></div>
+		  	</div>
+	  		 
+	  	
+	  	<div class="contenedor_resumen_pedido">
+	  		
+	  	</div>
+
+	  	</div>
+	  </div>
+	</div>
+</form>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- MODAL PARA NOMBRE DEL CLIENTE -->
+<div id="modal_pedido_enviado" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><b>Pedido Enviado!</b></h4>
+      </div>
+      <div class="modal-body" style="text-align: center">
+        <img width="50%" src="img/logo.png" style="margin-top: 2px">
+        <h2>¡Gracias por tu pedido!</h2> <br>Entrega Programada: <span class="entrega_pedido_mensaje"></span>
+        <br>Puede monitorear el estatus de su pedido desde su Menú -> Mis Pedidos
+        
+    </div>
+      <div class="modal-footer">
+        <div class="row">
+            <div class="col-xs-12">
+                <buttton class="btn btn-primary btn_aceptar btn-lg">
+                      Aceptar <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                </buttton>
+                
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!--FIN MODAL-->
+
+
+<div class="alerta_multiusos" hidden></div>
+
+
+
+<!-- Alerta Multiusos Mensaje -->
+<div id="Modal_alerta" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        	<div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+            <div class="modal-body" style="text-align: center; font-size: 18px; padding:20px 30px 20px 20px;" id="Modal_alerta_mensaje">
+                Este es un mensaje de alerta para reemplazar las alertas!!!
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-success" data-dismiss="modal"> Continuar </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal de confirmacion -->
+<div id="Modal_confirm" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+            <div class="modal-body" style="text-align: center; font-size: 18px; padding:20px 30px 20px 20px;" id="Modal_confirm_mensaje">
+                Este es un mensaje de confirm para reemplazar los confirm!!!
+            </div>
+            <div class="modal-footer">
+              <div class="col-xs-6">
+                <a href="#" class="btn btn-danger" data-dismiss="modal" id="btnNo"> <i class="fa fa-times" aria-hidden="true"></i> </a>
+              </div>
+              <div class="col-xs-6">
+                <a href="#" class="btn btn-success" data-dismiss="modal" id="btnYes"> <i class="fa fa-check" aria-hidden="true"></i> </a>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+
+<div class="contenedor_pedido_btn">
+	<div class="btn_paso btn_paso_1" paso='2'>
+		<button class="btn btn-success btn-lg" >Siguiente <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </button>
+	</div>
+	<div class="btn_paso btn_paso_2" paso='3' hidden>
+		<button class="btn btn-success btn-lg">Siguiente <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </button>
+	</div>
+	<div class="btn_paso btn_paso_3" hidden>
+		<button class="btn btn-primary btn-lg btn_enviar_pedido">Enviar Pedido <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </button>
+	</div>
+</div>
+
+    
+</body><!--FIN BODY-->
+
+<!--PIE -->
+<footer>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/rutas.js"></script>
+    <script type="text/javascript" src="js/funciones.js"></script>   
+    <script type="text/javascript" src="js/session.js"></script>
+    <script type="text/javascript" src="js/pedido.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNd6OjtDMttSHWKocaLW24wkAg6bp0peA&callback=cargar_datos"></script>
+    
+</footer>
+</html>

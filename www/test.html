@@ -1,0 +1,86 @@
+<meta charset="utf-8">
+<html>
+<head>
+<title>E-Commerce Classic sin 3D Secure</title>
+</head>
+<script type="text/javascript">
+function getDayTime() {
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+var hora = today.getHours();
+var min = today.getMinutes();
+var seg = today.getSeconds();
+if (dd < 10) {
+dd = '0' + dd;
+}
+if (mm < 10) {
+mm = '0' + mm;
+}
+if (hora < 10) {
+hora = '0' + hora;
+}
+if (min < 10) {
+min = '0' + min;
+}
+if (seg < 10) {
+seg = '0' + seg;
+}
+var horaLocal = '' + hora + min + seg;
+var fechaLocal = '' + dd + mm + yyyy;
+document.getElementById('currentTime').value = horaLocal;
+document.getElementById('currentDate').value = fechaLocal;
+}
+</script>
+<body>
+<form method="POST" id="transForm" target="blank" action="https://testhub.banregio.com/adq/">
+<table>
+<tr>
+<td>Afiliación: </td>
+<td><input type="number" name="BNRG_ID_AFILIACION" required></td>
+</tr>
+<tr>
+<td>ID Medio: </td>
+<td><input type="text" name="BNRG_ID_MEDIO" required></td>
+</tr>
+<tr>
+<td>Número de tarjeta: </td>
+<td><input type="number" name="BNRG_NUMERO_TARJETA" required></td>
+</tr>
+<tr>
+<td>Fecha de expiración (MMAA): </td>
+<td><input type="number" name="BNRG_FECHA_EXP" required></td>
+</tr>
+<tr>
+<td>Código de seguridad: </td>
+<td><input type="password" name="BNRG_CODIGO_SEGURIDAD" required></td>
+</tr>
+<tr>
+<td>Monto:</td>
+<td><input type="number" name="BNRG_MONTO_TRANS" required></td>
+</tr>
+<tr>
+<td>Folio: </td>
+<td><input type="text" name="BNRG_FOLIO" required maxlength="12"></td>
+</tr>
+<tr>
+<td>Modo: </td>
+<td><select name="BNRG_MODO_TRANS">
+<option value="PRD">Producción</option>
+<option value="AUT" selected>Autorizado (modo pruebas)</option>
+<option value="DEC">Declinado (modo pruebas)</option>
+<option value="RND">Aleatorio (modo pruebas)</option>
+</select></td>
+</tr>
+</table>
+<input type="hidden" name="BNRG_HORA_LOCAL" id="currentTime">
+<input type="hidden" name="BNRG_FECHA_LOCAL" id="currentDate">
+<!-- El motor de pagos envía la respuesta a la URL especificada mediante un POST-->
+<input type="hidden" name="BNRG_URL_RESPUESTA" value="https://admin.testing-device.com/index.php/api_controller/comprobante_pago">
+<input type="hidden" name="BNRG_MODO_ENTRADA" value="MANUAL">
+<input type="hidden" name="BNRG_CMD_TRANS" value="VENTA">
+<input type="submit" class="enviar" value="Procesar" onclick="getDayTime();">
+</form>
+</body>
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+<!-- CABECERA -->
+<!-- Android - com.phonegap.sd_ferbis -->
+<!-- IOS     - ferbis.com -->
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="connect-src *;">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    
+    <link rel="img/logo.png">
+    <title>market</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+</head>
+
+<!-- INICIO BODY -->
+<body style="touch-action: none">
+    <div class="splash"></div>
+    <!-- BUSCAR -->
+    <div class="row menu_buscar">
+        <div class="col-xs-2 regresar_banner img_dep back_click" dep="" style="display: none">
+            <img src="img/Flecha.png" width="80%">
+        </div>
+        <div class="col-xs-12" style="padding-bottom: 0px;">
+            <form id="form_buscar">
+                <input type="text" class="form-control input_search input-lg" placeholder="Buscar">
+                <input type="hidden" id="input_search_dep" value="0" >
+                <button type="submit" class="btn btn-default btn-buscar"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+<!-- Otro producto -->
+<a class="producto_no_encontrado row_articulo" style="display: none" producto="01010101" departamento="000" descripcion="Otro producto" unidad="NA" imagen="https://admin.testing-device.com/assets/img/productos/01010101.png" precio="0.0000"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Manual</a>
+
+    <!-- CONTENEDOR PRODUCTOS -->
+    <div id="contenedor_articulos">
+        <div class="contenedor_banner">
+            <a href="marketing.html" class="blank_a" id="link_banner" mensaje='0' disabled="disabled">
+                <div class="img_banner" style="padding-right: 15px; padding-left: 15px;">
+                    <img id="imgnc" src="#" width="100%" style="border-radius: 15px">
+                    <script>
+                        var d = new Date(); 
+                        document.getElementById("imgnc").src="https://admin.testing-device.com/assets/img/APP/Portada.jpg?ver=" + d.getTime();
+                    </script>
+                </div>
+            </a>
+            <div class="img_banner img_subdep" subdep="999" dep="000">
+                <img id="imgnc2" src="#" width="100%" style="border-radius: 15px">
+                <script>
+                    var d = new Date(); 
+                    document.getElementById("imgnc2").src="https://admin.testing-device.com/assets/img/APP/sub-banner.png?ver=" + d.getTime();
+                </script>
+            </div>
+            <div class="img_banner img_dep ini_" dep="005" nombre="Frutas y Verduras">
+                <img src="img/2005.png" width="100%">
+            </div>
+            <div class="img_banner img_dep ini_" dep="002" nombre="Carnes y aves">
+                <img src="img/2002.png" width="100%">
+            </div>
+            <div class="img_banner img_dep ini_" dep="01" nombre="Lacteos">
+                <img src="img/201.png" width="100%">
+            </div>
+            <div class="img_banner img_dep ini_" dep="001" nombre="Abarrotes">
+                <img src="img/2001.png" width="100%">
+            </div>
+            <div class="img_banner img_dep ini_" dep="008" nombre="Bebidas">
+                <img src="img/1008.png" width="100%">
+            </div>
+            <!--
+            <div class="img_banner img_dep ini_" dep="007" nombre="Ferbis Cuisine">
+                <img src="img/2007.png" width="100%">
+            </div>
+            <div class="img_banner img_dep ini_" dep="009" nombre="Limpieza">
+                <img src="img/2009.png" width="100%">
+            </div>
+        -->
+        </div>
+    </div>
+    <!-- CONTENEDOR MENU IZQUIERDO -->
+<div class="contenedor_menu_lateral_izq" hidden>
+    <a href="#" class="sombra_menu"></a>
+    <div class="menu_lateral_izq">
+        <div class="menu_lateral_cliente">
+            <i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i>
+            <div class="datos_cliente">
+                <span id="nombre_usuario">Pendiente...</span>
+                <br><br>
+                <div hidden>Puntos: <span id="puntos_cliente">-</span></div>
+            </div>
+        </div>
+        <a href="#" class="menu_inicio">
+            <div class="opcion_menu">
+                <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+                <span>Inicio</span>
+            </div>
+        </a>
+        <!--
+        <a href="pedidos.html" class="emergente_a blank_a">
+            <div class="opcion_menu">
+                <i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
+                <span>Mis Pedidos</span>
+            </div>
+        </a>
+        <a href="notificaciones.html" class="emergente_a blank_a">
+            <div class="opcion_menu">
+                <i class="fa fa-bell fa-2x" aria-hidden="true"></i>
+                <span>Notificaciones</span>
+                <span class="mini_burbuja_notificaciones">1</span>
+            </div> 
+        </a>
+    -->
+        <a href="cuenta.html" class="emergente_a blank_a">
+            <div class="opcion_menu">
+                <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
+                <span>Mi Cuenta</span>
+            </div>
+        </a>
+        <a href="tiendas.html" class="emergente_a blank_a">
+            <div class="opcion_menu">
+                <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                <span>Tiendas</span>
+            </div>
+        </a>
+        <a href="ayuda.html" class="emergente_a blank_a">
+            <div class="opcion_menu">
+                <i class="fa fa-question-circle fa-2x" aria-hidden="true"></i>
+                <span>Ayuda</span>
+            </div>  
+        </a>
+        <a href="terminos.html" class="emergente_a blank_a">
+            <div class="opcion_menu">
+                <i class="fa fa-book fa-2x" aria-hidden="true"></i>
+                <span>Términos y Condiciones</span>
+            </div>  
+        </a>  
+    </div>
+</div>
+    
+
+
+
+    <!-- CONTENEDOR MENU DERECHO -->
+<div class="contenedor_menu_lateral_der" hidden>
+    <a href="#" class="sombra_menu"></a>
+    <div class="menu_lateral_der">
+        <div class="menu_lateral_carrito">
+            <h3 style="width: 100%;"><span class="cant_carrito">0</span> Artículos en carrito</h3>
+
+        </div>
+        <div class="contenido_carrito">
+            contenido en lista
+        </div>
+        <div class="div_procesar_pedido">
+            <div class="div_procesar_pedido_contenido">
+                 <a href="#" class="btn btn-default btn-sm btn_otro_pedido row_articulo"
+                 producto="01010101" departamento="000" descripcion="Otro producto" unidad="NA" imagen="https://admin.testing-device.com/assets/img/productos/01010101.png" precio="0.0000">
+                    <i class="fa fa-pencil-square-o"></i> Agregar manualmente</i>
+                </a>
+                Total (aprox) $<span class="total_pedido">0.00</span>
+                <a href="pedido.html" class="btn btn-success btn-lg blank_a btn_realizar_pedido" mensaje="El consumo mínimo es de $200.00">
+                    Realizar Pedido <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+
+<!-- MENU -->
+    <div class="row menu_bar" style="text-align: center;">
+        <div class="col-xs-2">
+            <a href="#" class="abrir_menu_lateral">
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i> <span style="font-size: 8px;">MENU</span>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="pedidos.html" class="blank_a" style="color: #343434;">
+                <i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i> <span style="font-size: 8px;">Pedidos</span>
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a href="#" class="menu_inicio" >
+                <img width="120%" src="img/logo.png" style="margin-top: -10px">
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="notificaciones.html" class="blank_a" style="color: #343434;">
+                <span class="mini_burbuja_notificaciones">1</span>
+                <i class="fa fa-bell-o fa-2x" aria-hidden="true"></i> <span style="font-size: 8px;">Mensajes</span>
+            </a>
+        </div>
+        <div class="col-xs-2">
+            <a href="#" class="abrir_menu_lateral_der">
+                <span class="mini_burbuja" hidden>1</span>
+                <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> <span style="font-size: 8px;">Carrito</span>
+            </a>
+        </div>
+    </div>
+
+<!-- MODAL PARA INDICAR LA CANTIDAD -->
+<div id="agregarArticuloModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        <h4 class="modal-title"><b> Agregar al Carrito</b></h4>
+      </div>
+      <form id="form_alta_carrito">
+      <div class="modal-body">
+
+        <div class="ocultar_contenido_producto">
+
+        <div class="row imagen_modal" style="text-align: center">
+            <div class="img_modal_loader" style="height: 150px;"></div>
+            <img src='img/no_image.png' class='img_art2 img_prod_modal'>
+        </div>
+        <div class="row descripcion_modal" style="text-align: center">
+                DESCRIPCION
+        </div>
+        <BR>
+        <div class="row" style="text-align: center">
+            <div class="col col-xs-4" style="padding: 0px">
+                <a class="btn btn-danger btn-sm ord_menos" style="color: white">
+                    <i class="fa fa-minus-circle fa-2x" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="col col-xs-4" style="padding: 0px">
+                <input type="hidden" name='preparado' class="check_preparado_input">
+                <input type="hidden" name='asado' class="check_asado_input">
+                <input type="hidden" name="unidad" id="unidad_modal_form">
+                <input type="hidden" name="id_cliente" id="cliente_modal_form">
+                <input type="hidden" name="producto" id="producto_modal_form">
+                <input type="hidden" name="departamento" id="departamento_modal_form">
+                <input type="hidden" name="precio" id="precio_modal_form">
+                <input type="hidden" name="descripcion" id="descripcion_modal_form">
+                <input type="number" class="form-control input_orden" value="1" name="cantidad" id="cantidad_modal_form">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+            </div>
+            <div class="col col-xs-4" style="padding: 0px">
+                <a class="btn btn-success btn-sm ord_mas" style="color: white">
+                    <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row unidad_modal" style="text-align: center;font-weight: bold;"></div>
+        <div class="row fyv_pieza" style="text-align: center" hidden>
+             Para especificar en PIEZAS utilice el campo de detalles<br><br>
+        </div>
+        <div class="row row_asado" style="padding-top:15px">
+            <div class="row_preparado col-xs-6">
+                <div class="col-xs-8 servicio_preparado" style="text-align: right;padding-top: 1px;padding-bottom: 1px;">Preparado</div>
+                <div class="col-xs-4 div_check_preparado"><input type="checkbox" class="form-control check_preparado"></div>
+            </div><div class="col-xs-6 row_preparado2" hidden></div>
+            <div class="contenedor_asado col-xs-6">
+                <div class="col-xs-8 servicio_asado" style="text-align: right;padding-top: 1px;padding-bottom: 1px;">Asado</div>
+                <div class="col-xs-4 div_check_asado"><input type="checkbox" class="form-control check_asado"></div>
+            </div>
+            <div class="contenedor_corte col-xs-12">
+                    <div class="col-xs-4" style="text-align: right; padding-top: 10px">Corte</div>
+                    <div class="col-xs-6" style="">
+                        <select class="form-control select_corte" name="corte">
+                            <option value="N">No Aplica</option>
+                            <option value="1/4">Delgado 1/4"</option>
+                            <option value="1/2">Medio 1/2"</option>
+                            <option value="1">Grueso 1"</option>
+                            <option value="2">Extremo 2"</option>
+                        </select>
+                    </div>
+                </div>
+        </div>
+        <div class="row fyv_asado" style="text-align: center" hidden>
+            <div class="row row_asado" >
+            <div class="col-xs-4" style="text-align: right; padding-top: 10px">Término</div>
+            <div class="col-xs-6" style="">
+                <select class="form-control select_termino" name="termino">
+                    <option value="B/A">Bien Asado</option>
+                    <option value="3/4">Tres Cuartos</option>
+                    <option value="1/2">Término Medio</option>
+                </select>
+            </div>
+            </div>
+        </div>
+
+        </div>
+        <div class="ocultar_contenido_producto_mensaje" hidden>Describa a detalle el producto que desea agregar a su pedido</div>
+        <div class="row">
+            <div class="col-xs-12" style="padding-top: 10px;">
+                <textarea name="detalles" class="form-control ord_detalles" rows="2" placeholder="Detalles del pedido"></textarea>
+            </div>
+        </div>
+    </div>
+      
+      <div class="modal-footer">
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="button" class="btn btn-success agregar_al_carrito_btn">
+                    Agregar al carrito <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+      </div>
+    </form>
+
+    </div>
+  </div>
+</div> <!--FIN MODAL-->
+
+
+
+<!-- MODAL PARA NOMBRE DEL CLIENTE -->
+<div id="modal_bienvenida" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="text-align: center"><b>Bienvenido!</b></h4>
+      </div>
+      <form id="form_alta_cliente">
+      <div class="modal-body modal_bienvenida_body" style="text-align: center">
+        <img width="50%" src="img/logo.png" style="margin-top: 2px">
+        <br><br>Para brindarte un mejor servicio, apoyanos con el siguiente dato.<br><br>
+        
+        <input type="text" class="form-control modal_bienvenida_nombre" id="cliente_nombre">
+        Nombre Completo
+        </div>
+      <div class="modal-footer">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="terminos.html" class="emergente_a blank_a"> <i class="fa fa-book" aria-hidden="true"></i> Términos y Condiciones</a>
+
+                <buttton class="btn btn-danger btn_bienvenida btn-lg"> Iniciar <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </buttton>
+                
+            </div>
+        </div>
+      </div>
+    </form>
+
+    </div>
+  </div>
+</div> <!--FIN MODAL-->
+
+
+<!-- MODAL PARA INDICAR LA CANTIDAD -->
+<div id="editarArticuloModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><b>Editar pedido</b></h4>
+      </div>
+      <form id="form_editar_carrito">
+      <div class="modal-body">
+        <div class="ocultar_contenido_producto">
+        <div class="row imagen_modal" style="text-align: center">
+            <div class="img_modal_loader_e" style="height: 150px;"></div>
+            <img src='img/no_image.png' class='img_art2 img_prod_modal_e'>
+        </div>
+        <div class="row descripcion_modal_e" style="text-align: center">
+                DESCRIPCION
+        </div>
+        <BR>
+        <div class="row" style="text-align: center">
+            <div class="col col-xs-4" style="padding: 0px">
+                <a class="btn btn-danger btn-sm ord_menos" style="color: white">
+                    <i class="fa fa-minus-circle fa-2x" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="col col-xs-4" style="padding: 0px">
+                <input type="hidden" name="id_carrito_det" id="producto_carrito_modal_form_e">
+                <input type="hidden" name='asado' class="check_asado_input">
+                <input type="hidden" name='preparado' class="check_preparado_input">
+                <input type="hidden" name="unidad" id="unidad_modal_form_e">
+                <input type="hidden" name="id_cliente" id="cliente_modal_form_e">
+                <input type="hidden" name="producto" id="producto_modal_form_e">
+                <input type="hidden" name="departamento" id="departamento_modal_form_e">
+                <input type="hidden" name="precio" id="precio_modal_form_e">
+                <input type="hidden" name="descripcion" id="descripcion_modal_form_e">
+                <input type="number" class="form-control input_orden" value="1" name="cantidad" id="cantidad_modal_form_e">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+            </div>
+            <div class="col col-xs-4" style="padding: 0px">
+                <a class="btn btn-success btn-sm ord_mas" style="color: white">
+                    <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row fyv_pieza" style="text-align: center" hidden>
+            Para especificar en PIEZAS utilice el campo de detalles<br><br>
+        </div>
+        <div class="row unidad_modal_e" style="text-align: center;font-weight: bold;"></div>
+        <div class="row row_asado" style="padding-top:15px">
+            <div class="row_preparado col-xs-6">
+                <div class="col-xs-8 servicio_preparado" style="text-align: right; padding-top: 5px">Preparado</div>
+                <div class="col-xs-4 div_check_preparado"><input type="checkbox" class="form-control check_preparado"></div>
+            </div>
+            <div class="col-xs-6 row_preparado2" hidden></div>
+            <div class="contenedor_asado col-xs-6">
+                <div class="col-xs-8 servicio_asado" style="text-align: right; padding-top: 5px">Asado <i class="fa fa-fire" aria-hidden="true"></i></div>
+                <div class="col-xs-4 div_check_asado"><input type="checkbox" class="form-control check_asado"></div>
+            </div>
+            <div class="contenedor_corte col-xs-12">
+                    <div class="col-xs-4" style="text-align: right; padding-top: 10px">Corte</div>
+                    <div class="col-xs-6" style="">
+                        <select class="form-control select_corte" name="corte">
+                            <option value="N">No Aplica</option>
+                            <option value="1/4">Delgado 1/4"</option>
+                            <option value="1/2">Medio 1/2"</option>
+                            <option value="1">Grueso 1"</option>
+                            <option value="2">Extremo 2"</option>
+                        </select>
+                    </div>
+                </div>
+        </div>
+        <div class="row fyv_asado" style="text-align: center" hidden>
+            <div class="row row_asado" >
+            <div class="col-xs-4" style="text-align: right; padding-top: 10px">Término</div>
+            <div class="col-xs-6" style="">
+                <select class="form-control select_termino" name="termino">
+                    <option value="B/A">Bien Asado</option>
+                    <option value="3/4">Tres Cuartos</option>
+                    <option value="1/2">Término Medio</option>
+                </select>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="ocultar_contenido_producto_mensaje" hidden>Describa a detalle los productos que desea agregar a su pedido</div>
+        <div class="row">
+            <div class="col-xs-12" style="padding-top: 10px">
+                <textarea name="detalles" class="form-control ord_detalles" rows="2" placeholder="Detalles del pedido"></textarea>
+            </div>
+        </div>
+    </div>
+      
+      <div class="modal-footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="col-xs-4">
+                <button type="button" class="btn btn-danger btn_modal_borrar_e">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="col-xs-4">
+                <button type="button" class="btn btn-success btn_modal_guardar_e">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+      </div>
+    </form>
+
+    </div>
+  </div>
+</div> <!--FIN MODAL-->
+
+
+<div id="Modal_encuesta" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <b>Encuesta de satisfacción</b>
+            </div>
+                <div class="modal-body" style="text-align: center;padding-left: 0px;padding-right: 0px;">
+                    <img src="img/encuesta.jpg" width="100%">
+
+                </div>
+            <div class="modal-footer" >
+                <div class="col-xs-5" style="padding-right: 0px;padding-left: 0px;">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Ahora no</a>
+                </div>
+                <div class="col-xs-7" style="padding-right: 0px;padding-left: 0px;">
+                    <a href="#" class="btn btn-success iniciar_encuesta1">Iniciar encuesta</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="Modal_encuesta_1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <b>Encuesta de satisfacción</b> 
+            </div>
+
+            <form id="contenedor_encuesta">
+                <input type="hidden" name="id_cliente" id="id_cliente_encuesta">
+                <div class="modal-body body_encuesta" style="text-align: center; height: 300px;">
+                    <div class="col-xs-12 encuesta1" consecutivo='1' activo='1'>
+                        <h2>1/5</h2>
+                        <br><h4>¿Cual fue tu experiencia con los tiempos de entrega? </h4>
+                        <br><br>
+                        <div class="cont_estrellas" style="color: #F1C40F">
+                            <input type="hidden" value="1" name="tiempo">
+                            <table class="table">
+                                <tr>
+                                    <td class="td_star">
+                                        <i class="fa fa-star fa-2x estrella_check" aria-hidden="true" valor='1' pregunta="1"></i>
+                                    </td>
+                                    <td class="td_star">
+                                       <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='2' pregunta="1"></i>
+                                    </td>
+                                    <td class="td_star">
+                                       <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='3' pregunta="1"></i>
+                                    </td>
+                                    <td class="td_star">
+                                        <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='4' pregunta="1"></i>
+                                    </td>
+                                    <td class="td_star">
+                                        <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='5' pregunta="1"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 encuesta1" consecutivo='2' activo='0'>
+                        <h2>2/5</h2>
+                        <br><h4>¿Que le pareció el catálogo de productos de la aplicación? </h4>
+                        <br><br>
+                        <div class="cont_estrellas" style="color: #F1C40F">
+                            <input type="hidden" value="1" name="productos">
+                            <table class="table">
+                                <tr>
+                                    <td class="td_star">
+                                        <i class="fa fa-star fa-2x estrella_check" aria-hidden="true" valor='1' pregunta="2"></i>
+                                    </td>
+                                    <td class="td_star">
+                                       <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='2' pregunta="2"></i>
+                                    </td>
+                                    <td class="td_star">
+                                       <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='3' pregunta="2"></i>
+                                    </td>
+                                    <td class="td_star">
+                                        <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='4' pregunta="2"></i>
+                                    </td>
+                                    <td class="td_star">
+                                        <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='5' pregunta="2"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 encuesta1" consecutivo='3' activo='0'>
+                        <h2>3/5</h2>
+                        <br><h4>¿Cual fue su experiencia con la calidad del producto surtido por el personal de Ferbis? </h4>
+                        <br><br>
+                        <div class="cont_estrellas" style="color: #F1C40F">
+                            <input type="hidden" value="1" name="calidad">
+                            <table class="table">
+                                <tr>
+                                    <td class="td_star">
+                                        <i class="fa fa-star fa-2x estrella_check" aria-hidden="true" valor='1' pregunta="3"></i>
+                                    </td>
+                                    <td class="td_star">
+                                       <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='2' pregunta="3"></i>
+                                    </td>
+                                    <td class="td_star">
+                                       <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='3' pregunta="3"></i>
+                                    </td>
+                                    <td class="td_star">
+                                        <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='4' pregunta="3"></i>
+                                    </td>
+                                    <td class="td_star">
+                                        <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='5' pregunta="3"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 encuesta1" consecutivo='4' activo='0'>
+                        <h2>4/5</h2>
+                        <br><h4>¿Como evaluaría la facilidad de la aplicación al realizar un pedido? </h4>
+                        <br><br>
+                        <div class="cont_estrellas" style="color: #F1C40F">
+                            <input type="hidden" value="1" name="aplicacion">
+                            <table class="table">
+                                <tr>
+                                    <td class="td_star">
+                                        <i class="fa fa-star fa-2x estrella_check" aria-hidden="true" valor='1' pregunta="4"></i>
+                                    </td>
+                                    <td class="td_star">
+                                       <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='2' pregunta="4"></i>
+                                    </td>
+                                    <td class="td_star">
+                                       <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='3' pregunta="4"></i>
+                                    </td>
+                                    <td class="td_star">
+                                        <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='4' pregunta="4"></i>
+                                    </td>
+                                    <td class="td_star">
+                                        <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='5' pregunta="4"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 encuesta1" consecutivo='5' activo='0'>
+                        <h2>5/5</h2>
+                        <br><h4>¿En general cual fue su experiencia al ordenar por la aplicación Ferbis? </h4>
+                        <br><br>
+                        <div class="cont_estrellas" style="color: #F1C40F">
+                            <input type="hidden" value="1" name="general">
+                            <table class="table">
+                                <tr>
+                                    <td class="td_star">
+                                        <i class="fa fa-star fa-2x estrella_check" aria-hidden="true" valor='1' pregunta="5"></i>
+                                    </td>
+                                    <td class="td_star">
+                                       <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='2' pregunta="5"></i>
+                                    </td>
+                                    <td class="td_star">
+                                       <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='3' pregunta="5"></i>
+                                    </td>
+                                    <td class="td_star">
+                                        <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='4' pregunta="5"></i>
+                                    </td>
+                                    <td class="td_star">
+                                        <i class="fa fa-star-o fa-2x estrella_check" aria-hidden="true" valor='5' pregunta="5"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 encuesta1" consecutivo='6' activo='0'>
+                        <br><h4>¿Tiene algún comentario o sugerencia para nosotros?</h4>
+                        <br>
+                        <textarea class="form-control" rows="4" style="border: 1px solid gray;" name="comentario"></textarea>
+                    </div>
+                    <div class="col-xs-12 encuesta_gracias" hidden>
+                        <img src="img/logo.png" width="70%">
+                        <br><br>
+                        <h4>¡Gracias por tu colaboración!</h4>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer" >
+                <div class="col-xs-6" style="padding-right: 0px;padding-left: 0px;">
+                    <a href="#" class="btn btn-default enc_btn_anterior"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Anterior</a>
+                </div>
+                <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;">
+                    <a href="#" class="btn btn-success enc_btn_siguiente">Siguiente <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-xs-6" style="padding-right: 0px;padding-left: 0px;">
+                    <a href="#" class="btn btn-primary enc_btn_finalizar">Finalizar <i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-xs-12" style="padding-right: 0px;padding-left: 0px;" hidden>
+                    <a href="#" class="btn btn-default enc_btn_regresar" data-dismiss="modal"> Continuar </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Alerta Multiusos -->
+    <div class="alerta_multiusos" hidden></div>
+
+<!-- Alerta Multiusos Mensaje -->
+<div id="Modal_alerta" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+            <div class="modal-body" style="text-align: center; font-size: 18px; padding:20px 30px 20px 20px;" id="Modal_alerta_mensaje">
+                Este es un mensaje de alerta para reemplazar las alertas!!!
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-success" data-dismiss="modal"> Continuar </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal de confirmacion -->
+<div id="Modal_confirm" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+            <div class="modal-body" style="text-align: center; font-size: 18px; padding:20px 30px 20px 20px;" id="Modal_confirm_mensaje">
+                Este es un mensaje de confirm para reemplazar los confirm!!!
+            </div>
+            <div class="modal-footer">
+              <div class="col-xs-6">
+                <a href="#" class="btn btn-danger" data-dismiss="modal" id="btnNo"> <i class="fa fa-times" aria-hidden="true"></i> </a>
+              </div>
+              <div class="col-xs-6">
+                <a href="#" class="btn btn-success" data-dismiss="modal" id="btnYes"> <i class="fa fa-check" aria-hidden="true"></i> </a>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body><!--FIN BODY-->
+
+<!--PIE -->
+<footer>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-messaging.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCjH1rxV_IxcWsMAx2xJQMH12SbM153RyU",
+        authDomain: "peak-suprstate-278102.firebaseapp.com",
+        projectId: "peak-suprstate-278102",
+        storageBucket: "peak-suprstate-278102.appspot.com",
+        messagingSenderId: "859202618823",
+        appId: "1:859202618823:web:9c8c84d89631a3910745e2"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    
+
+    
+
+    </script>
+
+
+
+    
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/touch.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/rutas.js"></script>
+    <script type="text/javascript" src="js/funciones.js"></script>   
+    <script type="text/javascript" src="js/session.js"></script>
+    <script type="text/javascript" src="js/encuesta.js"></script>
+</footer>
+</html> 
